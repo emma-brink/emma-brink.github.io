@@ -6,15 +6,67 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+      <!-- MathJax -->
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
-    Hi i am emma
+    <div class="main">
+        <h2>Emma Brink</h2>
 
-    <h2>Research interests</h2>
-    
-    <h2>Preprints</h2>
+        <div class="floating">
+            Hi! My name is Emma Brink. I am a PhD-student at the University of Bonn under the supervision of <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>.
+        </div>
+        
+        <div class="floating">
+            <h3>Preprints</h2>
+                <ol>
+                    <li>
+                        <button class="paper-collapsible">
 
+                        Condensed Group Cohomology (<a href="./papers/condensedgroupcohomology.pdf">pdf</a>, <a href="https://arxiv.org/abs/2512.03648">arXiv</a>)
+                        </button>
+                        <div class="paper-content">
+            <p>
+              Condensed mathematics as developed by Clausen and Scholze yields a version of derived functors over the category of continuous \(G\)-modules for a Hausdorff topological group G. We study the resulting notion of group cohomology and its relation to continuous group cohomology and the condensed/sheaf/singular cohomology of classifying spaces. While condensed group cohomology is generally a more refined invariant than continuous group cohomology, we show that for a broad class of topological groups, continuous group cohomology with solid coefficients, such as locally profinite continuous G-modules, can be realized as a derived functor in the condensed setting. We also revisit cornerstones of condensed mathematics, paying special attention to set-theoretic size issues. To this end, we review a framework for working with accessible (hyper)sheaves on large sites satisfying suitable accessibility conditions and show that the associated categories retain many topos-like properties. Moreover, we generalize identifications of condensed with sheaf cohomology obtained by Clausen and Scholze.
+            </p>
+          </div>
+                    </li>
+                </ol>
+        </div>
+        
+        <div class="floating">
+            <h3>Talks</h2>
+        </div>
+        
+        
+        
+    </div>
 
-    <h2>Talks</h2>
+    <div class="footer">
+            <h5>Impressum</h5>
+            <small>
+                Angaben gem. § 5 TMG:<br/>
+                Emma Brink<br/>
+                Mathematisches Institut der Universität Bonn<br/>
+                Endenicher Allee 60<br/>
+                53115 Bonn<br/>
+                <!--TODO-->
+            </small>
+        </div>
+
+  <script>
+    // Paper Collapsible
+    const paperCollapsibles = document.querySelectorAll('.paper-collapsible');
+    paperCollapsibles.forEach((coll) => {
+      coll.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+    </script>
+
 </body>
 </html>

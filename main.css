@@ -1,2 +1,67 @@
 
+    body {
+  /* 1. Make the body fill the entire screen height */
+  min-height: 100vh; 
+  /* 2. Turn on flexbox */
+  display: flex;
+  /* 3. Stack items vertically */
+  flex-direction: column;
+  /* Remove default browser margins so scrollbars don't appear unnecessarily */
+  margin: 0; 
+}
+    
+    .main {
+      max-width: 1000px;
+      margin: 5% auto;
+      padding: 20px;
+      background-color: var(--white);
+      border-radius: 8px;
+      /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+      font-family: 'Roboto', sans-serif;
+    }
 
+    .floating {
+      background-color: var(--white);
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+.footer {
+  /* 4. This magic line pushes the footer to the bottom */
+  margin-top: auto; 
+  
+  /* Styling for visibility */
+  background-color: #adadad;
+  padding: 20px;
+}
+
+a {
+    color: #4a13b9;
+}
+
+    .paper-collapsible {
+      background-color: var(--secondary-color);
+      color: #000000;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: color var(--transition-speed);
+      margin-top: 10px;
+    }
+    .paper-collapsible:hover {
+    color: #4a13b9;
+    }
+    .paper-content {
+      padding: 10px 20px;
+      display: none;
+      background-color: white; /* Very Light orange */
+      font-size: 14px;
+      /*border: 1px solid #ddd;
+      border-radius: 5px;*/
+      margin-top: 10px;
+    }
