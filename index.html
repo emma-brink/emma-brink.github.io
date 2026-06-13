@@ -1,26 +1,141 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Emma Brink</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-      <!-- MathJax -->
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-</head>
-<body>
-    <div class="main">
-        <h2>Emma Brink</h2>
-      <div class="floating">
-        e-mail:  <a href="mailto:brink@math.uni-bonn.de">brink@math.uni-bonn.de</a>
-      </div>
+    <meta name="description" content="Academic webpage for Emma Brink.">
 
+
+<script>
+window.MathJax = {
+  loader: { load: ['[tex]/html'] },           // load the 'html' extension
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    packages: { '[+]': ['html'] },            // enable it for TeX input
+    macros: {
+      myuline: ['\\class{myuline}{#1}', 1]    //\myuline{...} → span.myuline
+    }
+  }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+    .myuline {
+    text-decoration: underline;
+    text-decoration-thickness: 0.09em;  /* thickness of line */
+    text-underline-offset: 0.12em;      /* distance below text */
+}
+
+    body {
+        font-family: "Computer Modern Serif", Georgia, serif;
+        max-width: 800px;
+        margin: 40px auto;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
+    
+        /* --- Paragraph formatting --- */
+    p {
+        text-align: justify;    /* justify text */
+        hyphens: auto;          /* better justification */
+        margin-bottom: 1em;
+    }
+
+    h1, h2 {
+        font-family: "Computer Modern Serif", serif;
+        margin-bottom: 0.2em;
+    }
+    nav a {
+        margin-right: 15px;
+    }
+
+    /* Hyperlink color */
+    a {
+        color: rgb(28, 9, 102);  /* Your requested color */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    img.profile {
+        width: 300px;
+        float: right;
+        margin-left: 20px;
+        border-radius: 4px;
+    }
+    footer {
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: rgb(108, 127, 179);
+    }
+/* Remove bullets ONLY for publication list */
+.pub-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Optional: Remove bullet spacing on list items */
+.pub-list li {
+    margin-left: 0;
+}
+
+/* Triangle arrow styling for the summary */
+.pub-list summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.pub-list summary::-webkit-details-marker {
+    display: none;
+}
+.pub-list {
+    list-style: none;     /* remove bullet */
+    padding-left: 20px;   /* restore normal UL indentation */
+}
+
+.myuline{
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;  /* thickness of line */
+    text-underline-offset: 0.1em;      /* distance below text */
+}
+.baduline{
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;  /* thickness of line */
+    text-underline-offset: 0.32em;      /* distance below text */
+}
+@media (max-width: 600px) {
+  img.profile {
+    width: 160px;     /* pick the size you want */
+    float: none;      /* optional: avoids squishing text */
+    display: block;   /* optional */
+    margin: 0 auto 16px; /* optional: centers + spacing */
+  }
+
+
+</style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Emma Brink</h1>
+        <h2>e-mail:  <a href="mailto:brink@math.uni-bonn.de">brink@math.uni-bonn.de</a></h2>
+        <hr>
+    </header>
+
+    <main>
         <div class="floating">
-          I am a PhD-student at the University of Bonn, supervised by <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>. My research is currently focused on equivariant homotopy theory, in particular questions surrounding equivariant bordism and applications of parametrized category theory to
-equivariant homotopy theoryand parametrized category theory.
+          I am a PhD-student at the University of Bonn, supervised by <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>. My research is currently focused on equivariant homotopy theory, I am especially interested in questions surrounding equivariant bordism and applications of parametrized category theory to
+equivariant homotopy theory.
+
+
         <div class="floating">
             <h3>Preprint</h2>
                 <ul>
@@ -36,11 +151,164 @@ equivariant homotopy theoryand parametrized category theory.
                 </ul>
         </div>
 
- <div class="floating">
+        </ul>
+</section>
+
+    <section id="misc">
+       <div class="floating">
           In spring 2026, Christian Carrick gave a minicourse on Real Homotopy Theory and the Theorems of Hill-Hopkins-Ravenel. 
           You can find the recordings on <a href="https://youtu.be/F9WUux8xt44?si=QEx5lAnJjrRLGxUN">YouTube</a>.
         </div>
         <div class="floating">
+    <h2></h2>
+
+\usepackage[normalem]{ulem}
+\usepackage{contour}
+\usepackage{mathtools} % for \mathllap
+
+\renewcommand{\ULdepth}{1.8pt} % how low to make the underline
+\contourlength{0.8pt} % how big to make the gap in words like map
+
+\makeatletter
+% usage: there are two ways to use this 
+% \myuline{text} puts an underline under text
+% \myuline[7em]{text} puts an underline under text but shortens it by 7em; of course 7em can be changed. This is useful for stuff like \({\myuline[0.5pt]{\mathrm{Map}}}_G\), vs \({\myuline{\mathrm{Map}}}_G\)
+\DeclareRobustCommand{\myuline}[2][0pt]{%
+  \ifmmode
+    % draw a slightly shorter underline
+    \uline{\hphantom{#2}\kern-#1}%
+    % restore overall width so following text lines up
+    \kern#1%
+    % overlay the actual content, with proper math style
+    \mathllap{\mathpalette\my@cont@{#2}}%
+  \else
+    \uline{\phantom{#2}\kern-#1}%
+    \kern#1%
+    \llap{\contour{white}{#2}}%
+  \fi
+}
+% #1 = current math style, #2 = content
+\newcommand{\my@cont@}[2]{\contour{white}{\mbox{$\m@th#1#2$}}}
+\makeatother
+%------------------------------------------------------------------------------------------END</code></pre>
+      </details>
+    </li>
+  </ul>
+</section>
+
+<style>
+  /* Optional styling for the dropdown content */
+  details.latex-snippet {
+    border: 1px solid rgba(162, 61, 61, 0.12);
+    border-radius: 12px;
+    padding: 8px 10px;
+    background: #fff;
+    max-width: 900px;
+  }
+  details.latex-snippet > summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .latex-snippet__header {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 10px;
+  }
+  .latex-snippet__copy {
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .latex-snippet__pre {
+    margin: 10px 0 0;
+    padding: 12px;
+    overflow: auto;
+    background: #fff;
+    color: rgb(33, 100, 60);
+    border-radius: 10px;
+  }
+  .latex-snippet__code {
+    white-space: pre;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 13px;
+  }
+</style>
+
+<script>
+  // code snippet copy
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".latex-snippet__copy");
+    if (!btn) return;
+
+    const container = btn.closest(".latex-snippet");
+    const codeEl = container.querySelector(".latex-snippet__code");
+    const text = codeEl.textContent;
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+
+    const old = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(() => (btn.textContent = old), 1200);
+  });
+</script>
+
+
+<style>
+  /* no box around the whole <details> */
+  details.latex-snippet {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: none;
+  }
+  details.latex-snippet > summary {
+    font-weight: normal; 
+    cursor: pointer;
+  }
+  </style>
+
+
+
+
+
+    </main>
+
+
+    <footer>
+            <h5>Impressum</h5>
+            <small>
+                Angaben gem. § 5 TMG:<br/>
+                Emma Brink<br/>
+                Mathematisches Institut der Universität Bonn<br/>
+                Endenicher Allee 60<br/>
+                53115 Bonn<br/>
+                <!--TODO-->
+            </small>
+    </footer>
+</body>
+</html>
+
+<body>
+
+
 
   <!--
         <div class="floating">
@@ -69,17 +337,6 @@ equivariant homotopy theoryand parametrized category theory.
         
     </div>-->
 
-    <div class="footer">
-            <h5>Impressum</h5>
-            <small>
-                Angaben gem. § 5 TMG:<br/>
-                Emma Brink<br/>
-                Mathematisches Institut der Universität Bonn<br/>
-                Endenicher Allee 60<br/>
-                53115 Bonn<br/>
-                <!--TODO-->
-            </small>
-        </div>
 
   <script>
     // Paper Collapsible
