@@ -162,39 +162,6 @@ equivariant homotopy theory.
         <div class="floating">
     <h2></h2>
 
-\usepackage[normalem]{ulem}
-\usepackage{contour}
-\usepackage{mathtools} % for \mathllap
-
-\renewcommand{\ULdepth}{1.8pt} % how low to make the underline
-\contourlength{0.8pt} % how big to make the gap in words like map
-
-\makeatletter
-% usage: there are two ways to use this 
-% \myuline{text} puts an underline under text
-% \myuline[7em]{text} puts an underline under text but shortens it by 7em; of course 7em can be changed. This is useful for stuff like \({\myuline[0.5pt]{\mathrm{Map}}}_G\), vs \({\myuline{\mathrm{Map}}}_G\)
-\DeclareRobustCommand{\myuline}[2][0pt]{%
-  \ifmmode
-    % draw a slightly shorter underline
-    \uline{\hphantom{#2}\kern-#1}%
-    % restore overall width so following text lines up
-    \kern#1%
-    % overlay the actual content, with proper math style
-    \mathllap{\mathpalette\my@cont@{#2}}%
-  \else
-    \uline{\phantom{#2}\kern-#1}%
-    \kern#1%
-    \llap{\contour{white}{#2}}%
-  \fi
-}
-% #1 = current math style, #2 = content
-\newcommand{\my@cont@}[2]{\contour{white}{\mbox{$\m@th#1#2$}}}
-\makeatother
-%------------------------------------------------------------------------------------------END</code></pre>
-      </details>
-    </li>
-  </ul>
-</section>
 
 <style>
   /* Optional styling for the dropdown content */
