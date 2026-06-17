@@ -51,6 +51,22 @@ window.MathJax = {
         font-family: "Computer Modern Serif", serif;
         margin-bottom: 0.2em;
     }
+.contact-line {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-align: left;
+    color: rgb(28, 9, 102);
+}
+
+.contact-line a {
+    color: rgb(28, 9, 102);
+}
+
+header hr {
+    margin-bottom: 1.35em;
+}
+
     nav a {
         margin-right: 15px;
     }
@@ -110,6 +126,69 @@ window.MathJax = {
     text-decoration-thickness: 0.07em;  /* thickness of line */
     text-underline-offset: 0.32em;      /* distance below text */
 }
+
+
+/* Intro section */
+.intro-section {
+    margin-bottom: 0.35em;
+}
+
+.intro-section p {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+}
+
+.intro-section + .floating h3 {
+    margin-top: 0.45em;
+}
+
+/* Preprint dropdown */
+.paper-item {
+    margin-left: 0;
+}
+
+.paper-details {
+    margin-top: 0.4em;
+}
+
+.paper-title {
+    cursor: pointer;
+    list-style: none;
+    color: rgb(28, 9, 102);
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.paper-title::-webkit-details-marker {
+    display: none;
+}
+
+.paper-title::before {
+    content: "•";
+    display: inline-block;
+    width: 1em;
+    color: rgb(108, 127, 179);
+}
+
+.paper-title:hover {
+    text-decoration: none;
+}
+
+.paper-title:hover .paper-title-text {
+    text-decoration: underline;
+}
+
+.paper-links,
+.paper-links a {
+    font-weight: normal;
+    font-size: 0.95em;
+}
+
+.paper-content {
+    margin-top: 0.6em;
+    padding-left: 1.25em;
+}
+
 @media (max-width: 600px) {
   img.profile {
     width: 160px;     /* pick the size you want */
@@ -117,42 +196,54 @@ window.MathJax = {
     display: block;   /* optional */
     margin: 0 auto 16px; /* optional: centers + spacing */
   }
-
+}
 
 </style>
+
+
+<script>
+  // Let pdf/arXiv links inside the preprint title open normally without toggling the abstract.
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".paper-title a")) {
+      event.stopPropagation();
+    }
+  });
+</script>
 
 </head>
 
 <body>
     <header>
         <h1>Emma Brink</h1>
-        <h3><a href="mailto:brink@math.uni-bonn.de">brink@math.uni-bonn.de</a></h3>
+        <p class="contact-line">e-mail: <a href="mailto:brink@math.uni-bonn.de">brink@math.uni-bonn.de</a></p>
         <hr>
     </header>
 
     <main>
-        <div class="floating">
-          I am a PhD-student at the University of Bonn, supervised by <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>. My research is currently focused on equivariant homotopy theory, I am especially interested in questions surrounding equivariant bordism and applications of parametrized category theory to
-equivariant homotopy theory.
-
-
-        <div class="floating">
-            <h3>Preprint</h2>
-                <ul>
-                    <li>
-                        <button class="paper-collapsible">Condensed Group Cohomology (<a href="./papers/condensedgroupcohomology.pdf">pdf</a>, <a href="https://arxiv.org/abs/2512.03648">arXiv</a>)
-                        </button>
-                        <div class="paper-content">
+        <div class="intro-section">
             <p>
-              Condensed mathematics as developed by Clausen and Scholze yields a version of derived functors over the category of continuous G-modules for a Hausdorff topological group G. We study the resulting notion of group cohomology and its relation to continuous group cohomology and the condensed/sheaf/singular cohomology of classifying spaces. While condensed group cohomology is generally a more refined invariant than continuous group cohomology, we show that for a broad class of topological groups, continuous group cohomology with solid coefficients, such as locally profinite continuous G-modules, can be realized as a derived functor in the condensed setting. We also revisit cornerstones of condensed mathematics, paying special attention to set-theoretic size issues. To this end, we review a framework for working with accessible (hyper)sheaves on large sites satisfying suitable accessibility conditions and show that the associated categories retain many topos-like properties. Moreover, we generalize identifications of condensed with sheaf cohomology obtained by Clausen and Scholze.
+                I am a PhD-student at the University of Bonn, supervised by <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>. My research is currently focused on equivariant homotopy theory, I am especially interested in questions surrounding equivariant bordism and applications of parametrized category theory to equivariant homotopy theory.
             </p>
-          </div>
-                    </li>
-                </ul>
         </div>
 
-        </ul>
-</section>
+        <div class="floating">
+            <h3>Preprint</h3>
+            <ul class="pub-list">
+                <li class="paper-item">
+                    <details class="paper-details">
+                        <summary class="paper-title">
+                            <span class="paper-title-text">Condensed Group Cohomology</span>
+                            <span class="paper-links">(<a href="./papers/condensedgroupcohomology.pdf">pdf</a>, <a href="https://arxiv.org/abs/2512.03648">arXiv</a>)</span>
+                        </summary>
+                        <div class="paper-content">
+                            <p>
+                                Condensed mathematics as developed by Clausen and Scholze yields a version of derived functors over the category of continuous G-modules for a Hausdorff topological group G. We study the resulting notion of group cohomology and its relation to continuous group cohomology and the condensed/sheaf/singular cohomology of classifying spaces. While condensed group cohomology is generally a more refined invariant than continuous group cohomology, we show that for a broad class of topological groups, continuous group cohomology with solid coefficients, such as locally profinite continuous G-modules, can be realized as a derived functor in the condensed setting. We also revisit cornerstones of condensed mathematics, paying special attention to set-theoretic size issues. To this end, we review a framework for working with accessible (hyper)sheaves on large sites satisfying suitable accessibility conditions and show that the associated categories retain many topos-like properties. Moreover, we generalize identifications of condensed with sheaf cohomology obtained by Clausen and Scholze.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </div>
 
     <section id="misc">
        <div class="floating">
