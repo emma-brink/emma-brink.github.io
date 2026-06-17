@@ -1,67 +1,412 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emma Brink</title>
+    <meta name="description" content="Academic webpage for Emma Brink.">
+
+
+<script>
+window.MathJax = {
+  loader: { load: ['[tex]/html'] },           // load the 'html' extension
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    packages: { '[+]': ['html'] },            // enable it for TeX input
+    macros: {
+      myuline: ['\\class{myuline}{#1}', 1]    //\myuline{...} → span.myuline
+    }
+  }
+};
+</script>
+
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+    .myuline {
+    text-decoration: underline;
+    text-decoration-thickness: 0.09em;  /* thickness of line */
+    text-underline-offset: 0.12em;      /* distance below text */
+}
 
     body {
-  /* 1. Make the body fill the entire screen height */
-  min-height: 100vh; 
-  /* 2. Turn on flexbox */
-  display: flex;
-  /* 3. Stack items vertically */
-  flex-direction: column;
-  /* Remove default browser margins so scrollbars don't appear unnecessarily */
-  margin: 0; 
-}
+        font-family: "Computer Modern Serif", Georgia, serif;
+        max-width: 800px;
+        margin: 40px auto;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
     
-    .main {
-      max-width: 1000px;
-      margin: 5% auto;
-      padding: 20px;
-      background-color:  #e1e7e7;;
-      border-radius: 8px;
-      /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-      font-family: 'Roboto', sans-serif;
+        /* --- Paragraph formatting --- */
+    p {
+        text-align: justify;    /* justify text */
+        hyphens: auto;          /* better justification */
+        margin-bottom: 1em;
     }
 
-    .floating {
-      background-color: var(--white);
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: 1px solid #e1e7e7;
+    h1, h2 {
+        font-family: "Computer Modern Serif", serif;
+        margin-bottom: 0.2em;
     }
-.footer {
-  /* 4. This magic line pushes the footer to the bottom */
-  margin-top: auto; 
-  
-  /* Styling for visibility */
-  background-color: #e1e7e7;
-  padding: 20px;
+.contact-line {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-align: left;
+    color: rgb(28, 9, 102);
 }
 
-a {
-    color: #0c3274;
+.contact-line a {
+    color: rgb(28, 9, 102);
 }
 
-    .paper-collapsible {
-      background-color: var(--secondary-color);
-      color: #000000;
-      cursor: pointer;
-      padding: 15px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      font-size: 16px;
-      border-radius: 5px;
-      transition: color var(--transition-speed);
-      margin-top: 10px;
+header hr {
+    margin-bottom: 1.35em;
+}
+
+    nav a {
+        margin-right: 15px;
     }
-    .paper-collapsible:hover {
-    color: #e1e7e7;;
+
+    /* Hyperlink color */
+    a {
+        color: rgb(28, 9, 102);  /* Your requested color */
+        text-decoration: none;
     }
-    .paper-content {
-      padding: 10px 20px;
-      display: none;
-      background-color: #e1e7e7; 
-      font-size: 14px;
-      /*border: 1px solid #ddd;
-      border-radius: 5px;*/
-      margin-top: 10px;
+    a:hover {
+        text-decoration: underline;
     }
+
+    img.profile {
+        width: 300px;
+        float: right;
+        margin-left: 20px;
+        border-radius: 4px;
+    }
+    footer {
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: rgb(108, 127, 179);
+    }
+/* Remove bullets ONLY for publication list */
+.pub-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Optional: Remove bullet spacing on list items */
+.pub-list li {
+    margin-left: 0;
+}
+
+/* Triangle arrow styling for the summary */
+.pub-list summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.pub-list summary::-webkit-details-marker {
+    display: none;
+}
+.pub-list {
+    list-style: none;     /* remove bullet */
+    padding-left: 20px;   /* restore normal UL indentation */
+}
+
+.myuline{
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;  /* thickness of line */
+    text-underline-offset: 0.1em;      /* distance below text */
+}
+.baduline{
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;  /* thickness of line */
+    text-underline-offset: 0.32em;      /* distance below text */
+}
+
+
+/* Intro section */
+.intro-section {
+    margin-bottom: 0.35em;
+}
+
+.intro-section p {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+}
+
+.intro-section + .floating h3 {
+    margin-top: 0.45em;
+}
+
+/* Preprint dropdown */
+.paper-item {
+    margin-left: 0;
+}
+
+.paper-details {
+    margin-top: 0.4em;
+}
+
+.paper-title {
+    cursor: pointer;
+    list-style: none;
+    color: rgb(28, 9, 102);
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.paper-title::-webkit-details-marker {
+    display: none;
+}
+
+.paper-title::before {
+    content: "•";
+    display: inline-block;
+    width: 1em;
+    color: rgb(108, 127, 179);
+}
+
+.paper-title:hover {
+    text-decoration: none;
+}
+
+.paper-title:hover .paper-title-text {
+    text-decoration: underline;
+}
+
+.paper-links,
+.paper-links a {
+    font-weight: normal;
+    font-size: 0.95em;
+}
+
+.paper-content {
+    margin-top: 0.6em;
+    padding-left: 1.25em;
+}
+
+@media (max-width: 600px) {
+  img.profile {
+    width: 160px;     /* pick the size you want */
+    float: none;      /* optional: avoids squishing text */
+    display: block;   /* optional */
+    margin: 0 auto 16px; /* optional: centers + spacing */
+  }
+}
+
+</style>
+
+
+<script>
+  // Let pdf/arXiv links inside the preprint title open normally without toggling the abstract.
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".paper-title a")) {
+      event.stopPropagation();
+    }
+  });
+</script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Emma Brink</h1>
+        <p class="contact-line">e-mail: <a href="mailto:brink@math.uni-bonn.de">brink@math.uni-bonn.de</a></p>
+        <hr>
+    </header>
+
+    <main>
+        <div class="intro-section">
+            <p>
+                I am a PhD-student at the University of Bonn, supervised by <a href="https://www.math.uni-bonn.de/people/schwede/">Stefan Schwede</a>. My research is currently focused on equivariant homotopy theory, I am especially interested in questions surrounding equivariant bordism and applications of parametrized category theory to equivariant homotopy theory.
+            </p>
+        </div>
+
+        <div class="floating">
+            <h3>Preprint</h3>
+            <ul class="pub-list">
+                <li class="paper-item">
+                    <details class="paper-details">
+                        <summary class="paper-title">
+                            <span class="paper-title-text">Condensed Group Cohomology</span>
+                            <span class="paper-links">(<a href="./papers/condensedgroupcohomology.pdf">pdf</a>, <a href="https://arxiv.org/abs/2512.03648">arXiv</a>)</span>
+                        </summary>
+                        <div class="paper-content">
+                            <p>
+                                Condensed mathematics as developed by Clausen and Scholze yields a version of derived functors over the category of continuous G-modules for a Hausdorff topological group G. We study the resulting notion of group cohomology and its relation to continuous group cohomology and the condensed/sheaf/singular cohomology of classifying spaces. While condensed group cohomology is generally a more refined invariant than continuous group cohomology, we show that for a broad class of topological groups, continuous group cohomology with solid coefficients, such as locally profinite continuous G-modules, can be realized as a derived functor in the condensed setting. We also revisit cornerstones of condensed mathematics, paying special attention to set-theoretic size issues. To this end, we review a framework for working with accessible (hyper)sheaves on large sites satisfying suitable accessibility conditions and show that the associated categories retain many topos-like properties. Moreover, we generalize identifications of condensed with sheaf cohomology obtained by Clausen and Scholze.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </div>
+
+    <section id="misc">
+       <div class="floating">
+          In spring 2026, Christian Carrick gave a minicourse on Real Homotopy Theory and the Theorems of Hill-Hopkins-Ravenel. 
+          You can find the recordings on <a href="https://youtu.be/F9WUux8xt44?si=QEx5lAnJjrRLGxUN">YouTube</a>.
+        </div>
+        <div class="floating">
+    <h2></h2>
+
+
+<style>
+  /* Optional styling for the dropdown content */
+  details.latex-snippet {
+    border: 1px solid rgba(162, 61, 61, 0.12);
+    border-radius: 12px;
+    padding: 8px 10px;
+    background: #fff;
+    max-width: 900px;
+  }
+  details.latex-snippet > summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .latex-snippet__header {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 10px;
+  }
+  .latex-snippet__copy {
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .latex-snippet__pre {
+    margin: 10px 0 0;
+    padding: 12px;
+    overflow: auto;
+    background: #fff;
+    color: rgb(33, 100, 60);
+    border-radius: 10px;
+  }
+  .latex-snippet__code {
+    white-space: pre;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 13px;
+  }
+</style>
+
+<script>
+  // code snippet copy
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".latex-snippet__copy");
+    if (!btn) return;
+
+    const container = btn.closest(".latex-snippet");
+    const codeEl = container.querySelector(".latex-snippet__code");
+    const text = codeEl.textContent;
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+
+    const old = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(() => (btn.textContent = old), 1200);
+  });
+</script>
+
+
+<style>
+  /* no box around the whole <details> */
+  details.latex-snippet {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: none;
+  }
+  details.latex-snippet > summary {
+    font-weight: normal; 
+    cursor: pointer;
+  }
+  </style>
+
+
+
+
+
+    </main>
+
+
+    <footer>
+            <h5>Impressum</h5>
+            <small>
+                Angaben gem. § 5 TMG:<br/>
+                Emma Brink<br/>
+                Mathematisches Institut der Universität Bonn<br/>
+                Endenicher Allee 60<br/>
+                53115 Bonn<br/>
+                <!--TODO-->
+            </small>
+    </footer>
+</body>
+</html>
+
+<body>
+
+
+
+  <!--
+        <div class="floating">
+            <h3>Past and upcoming talks</h2>
+                <ul>
+                     <li> Sept 2026: <strong>Condensed Group Cohomology</strong>, <em><a href="https://www.uni-muenster.de/MathematicsMuenster/events/2026/interactions-between-operator-algebras-k-theory-homotopy-theory.shtml">Interactions between operator algebras, K-theory and homotopy theory</a>, Münster.</em></li>
+                    <li> Jan 2026: <strong>Thom spectra in (global) equivariant homotopy theory</strong>, <em>Oberseminar Topologie, Münster.</em></li>
+                    <li> Nov 2025: <strong>Equivariant bordism and Thom spectra</strong>, <em><a href="https://www.math.uni-bonn.de/ag/topo/36_NRW_Topology_meeting.html">NRW Topology Meeting</a>, Bonn.</em></li>
+                    <li> June 2025: <strong>Multiplicative structures on quotient ring spectra</strong>, <em><a href="https://sites.google.com/view/european-talbot/">European Talbot Workshop</a>.</em></li>
+                     <li> April 2025: <strong>Condensed Group Cohomology</strong>, <em>Teeseminar, Münster.</em></li>
+<li> Feb 2025: <strong>Equivariant bordism and Thom spectra</strong>, <em>Younghom, Online. </em></li>
+                 <li> Sept 2024: <strong>Equivariant bordism and Thom spectra</strong>, <em> <a href="https://www.math.ru.nl/~sagave/east2024/"> European Autumn School in Topology</a>, Utrecht.</em></li>
+                 <li> Sept 2024: <strong>Condensed Group Cohomology</strong>, <em><a href="https://www.federicobambozzi.eu/derived_geometry_conference/index.html">An Invitation to Derived Geometry</a>, Padua.</em></li>
+  <li> Aug 2024: <strong>Equivariant bordism and Thom spectra</strong>, <em><a href="https://www.uni-muenster.de/MathematicsMuenster/de/events/2024/YTM.shtml">Young Topologists Meeting</a>, Münster.</em></li>
+                <li> Oct 2023: <strong>Condensed Group Cohomology</strong>, <em>Bonn Topology seminar. </em></li>
+                <li> July 2023: <strong>Condensed Group Cohomology</strong>, <em><a href="https://archiveweb.epfl.ch/ytm2023.epfl.ch/"> Young Topologists Meeting</a>, Lausanne. </em></li>
+                <li> June 2023: <strong>Condensed Group Cohomology</strong>, <em> <a href="https://www.mpim-bonn.mpg.de/node/11707">Arbeitstagung Condensed Mathematics</a>, Bonn. </em></li>
+                <li> April 2023: <strong>Condensed Group Cohomology</strong>, <em>New Directions in Group Theory and Triangulated Categories, Online. </em></li>
+       
+                 <li> Feb 2023: <strong>Condensed Group Cohomology</strong>, <em><a href="https://crc326gaus.de/event/condensed-mathematics-and-k-theory/">Condensed Mathematics and K-Theory</a>, Mainz. </em></li>
+
+                </ul>
+
+              
+        
+        
+    </div>-->
+
+
+  <script>
+    // Paper Collapsible
+    const paperCollapsibles = document.querySelectorAll('.paper-collapsible');
+    paperCollapsibles.forEach((coll) => {
+      coll.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+    </script>
+
+</body>
+</html>
